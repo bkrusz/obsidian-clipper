@@ -7,8 +7,11 @@ function setFields(options: Options): void {
 	for (const [key, value] of Object.entries(options)) {
 		switch (key) {
 			case "vaultName":
-				let element = document.querySelector("input#vault-name")! as HTMLInputElement;
-				element.value = value;
+				let vaultName = document.querySelector("input#vault-name")! as HTMLInputElement;
+				vaultName.value = value;
+      case "subDirectory":
+        let subDirectory = document.querySelector("input#directory-name")! as HTMLInputElement;
+        subDirectory.value = value;
 		}
 	}
 }
@@ -22,7 +25,10 @@ document.querySelectorAll("input").forEach((node) => {
 				browser.storage.local.set({
 					'vaultName': node.value
 				});
-				break;
+      case "directory-name":
+        browser.storage.local.set({
+          'subDirectory': node.value
+        })
 		}
 	})
 });

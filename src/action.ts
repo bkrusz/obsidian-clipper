@@ -32,7 +32,7 @@ function activateOptions(opts: ClipOption[]): void {
 }
 
 function listenForClicks(sender: browser.runtime.MessageSender): void {
-	document.querySelectorAll("li").forEach((node) => {
+  document.getElementById("menu")?.querySelectorAll("li").forEach((node) => {
 		let nodeId = node.id
 		function listener(event: Event) {
 			let e = event as MouseEvent
@@ -64,13 +64,17 @@ async function openObsidian(clip: Clipping) {
 	let options = await retrieveOptions();
 	let modifiedTitle = clip.title
 		.split(":").join("")
-		.split("/").join("");
+		.split("/").join("")
+    .replaceAll(" ", "-");
 	let encodedTitle = encodeURI(modifiedTitle);
 	let encodedVault = encodeURI(options.vaultName);
-	let encodedContent = encodeURIComponent(clip.content);
-	let uri = `obsidian://new?vault=${encodedVault}&name=${encodedTitle}&content=${encodedContent}`;
+  let addToSubDirInput = document.getElementById("sub-dir-checkbox") as HTMLInputElement;
+  let isAddToSubDirSelected = addToSubDirInput.checked;
+  let encodedSubDirectory = isAddToSubDirSelected ? encodeURI(options.subDirectory) + "%2F" : ""
+  console.log(`encodedSubDirectory: ${encodedSubDirectory}`)
+	let encodedContent = encodeURIComponent(clip.content).replaceAll("=", "%3D");
+  let uri = `obsidian://advanced-uri?vault=${encodedVault.replaceAll("%", "%25")}&filepath=${encodedSubDirectory.replaceAll("%", "%25")}${encodedTitle.replaceAll("%", "%25")}&data=${encodedContent.replaceAll("%", "%25")}`;
 	browser.tabs.create({url: uri, active: true}).then((tab: browser.tabs.Tab) => {
-		// TODO: maybe close tab??
 		console.log(tab)
 	});
 }

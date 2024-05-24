@@ -44,10 +44,12 @@ interface SendClipMessage extends Message{
 
 interface Options {
 	vaultName: string;
+  subDirectory: string;
 }
 
 const defaultOptions: Options = {
-	"vaultName": "Web"
+	"vaultName": "PKM",
+  "subDirectory": "Articles"
 }
 
 async function retrieveOptions(): Promise<Options> {

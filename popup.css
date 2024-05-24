@@ -1,5 +1,6 @@
 #popup-content {
 	background-color: rgb(22, 22, 22);
+  border-radius: 8px;
 	display: inline-block;
 }
 h1 {
@@ -11,9 +12,13 @@ h1 {
 	text-align: center;
 }
 .menu {
-	padding: 8px 0;
+  list-style-type: none;
+	padding: 2px 0;
 	position: relative;
 	display: inline-block;
+}
+.menu-item label {
+  color: rgb(163, 163, 163);
 }
 .menu-item button {
 	cursor: default;

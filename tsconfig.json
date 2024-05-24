@@ -6,6 +6,7 @@
     "typeRoots": ["node_modules/@types", "node_modules/web-ext-types"],
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "lib": [ "esnext", "dom" ]
   }
 }
