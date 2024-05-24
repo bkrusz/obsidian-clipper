@@ -54,7 +54,7 @@ async function getClipping(option: ClipOption): Promise<Clipping> {
 			let result = await Mercury.parse(document.URL, {contentType: 'markdown'})
 			return {
 				title: result.title!,
-				content: result.content!
+				content: result.content!.replace("=","%3D")
 			}
 	}
 }
