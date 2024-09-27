@@ -1,8 +1,8 @@
 {
 
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Obsidian Clipper",
-  "version": "0.1",
+  "version": "0.3",
   "description": "A tool to clip web pages into Obsidian.md",
   "developer": {
     "name": "ewestern",
