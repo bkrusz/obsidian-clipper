@@ -8,7 +8,7 @@
     "build": "node_modules/webpack-cli/bin/cli.js",
     "dev": "node_modules/webpack-cli/bin/cli.js watch"
   },
-  "author": "pfrance@gmail.com",
+  "author": "baileykrusz@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.12.16",

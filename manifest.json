@@ -5,8 +5,8 @@
   "version": "0.3",
   "description": "A tool to clip web pages into Obsidian.md",
   "developer": {
-    "name": "ewestern",
-    "url": "https://github.com/ewestern/obsidian-clipper"
+    "name": "bkrusz",
+    "url": "https://github.com/bkrusz/obsidian-clipper"
   },
   "permissions": [
     "activeTab",
