@@ -8,6 +8,11 @@
     "name": "bkrusz",
     "url": "https://github.com/bkrusz/obsidian-clipper"
   },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "160c1182-b4a5-4a86-ad96-5090ce432f45"
+    }
+  },
   "permissions": [
     "activeTab",
     "tabs",
